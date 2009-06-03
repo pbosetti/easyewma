@@ -1,0 +1,10 @@
+Package: easyewma
+Type: Package
+Title: Simple EWMA chart
+Version: 1.0
+Date: 2009-06-03
+Author: Paolo Bosetti
+Maintainer: Paolo Bosetti <paolo.bosetti@ing.unitn.it>
+Description: Very simple and easy EWMA charting class
+License: GPL
+LazyLoad: yes
