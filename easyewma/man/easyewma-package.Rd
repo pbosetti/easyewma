@@ -4,37 +4,32 @@
 \alias{easyewma}
 \docType{package}
 \title{
-	Easy EWMA chart builder
+  Easy EWMA chart builder
 }
 \description{
-More about what it does (maybe more than one line)
-~~ A concise (1-5 lines) description of the package ~~
+  The library allows an easy computation of Exponentially Weighted Moving Average charts.
 }
 \details{
-\tabular{ll}{
-Package: \tab easyewma\cr
-Type: \tab Package\cr
-Version: \tab 1.0\cr
-Date: \tab 2009-06-03\cr
-License: \tab GPL\cr
-LazyLoad: \tab yes\cr
-}
-~~ An overview of how to use the package, including the most ~~
-~~ important functions ~~
+  \tabular{ll}{
+  Package: \tab easyewma\cr
+  Type: \tab Package\cr
+  Version: \tab 1.0\cr
+  Date: \tab 2009-06-03\cr
+  License: \tab GPL\cr
+  LazyLoad: \tab yes\cr
+  }
 }
 \author{
-Paolo Bosetti
-
-Maintainer: Paolo Bosetti <paolo.bosetti@ing.unitn.it>
-~~ The author and/or maintainer of the package ~~
+  Paolo Bosetti
+  Maintainer: Paolo Bosetti <paolo.bosetti@ing.unitn.it>
 }
 \references{
-~~ Literature or other references for background information ~~
+ Montgomery, D.~C., 2001.
+ Introduction to Statistical Quality Control, 4th~ed.
+ Wiley, New York, N. Y.
 }
 \keyword{ package }
 \seealso{
-~~ Optional links to other man pages, e.g. ~~
-~~ \code{\link[<pkg>:<pkg>-package]{<pkg>}} ~~
 }
 \examples{
 data(burrs)

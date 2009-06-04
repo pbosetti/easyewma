@@ -3,22 +3,22 @@
 \alias{group.by}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-	Groups the data by group index.
+  group.by
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+  Groups the data by group index.
 }
 \usage{
-group.by(data, sample)
+  group.by(data, sample)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{data}{
-%%     ~~Describe \code{data} here~~
-}
+    An array of values to be grouped
+  }
   \item{sample}{
-%%     ~~Describe \code{sample} here~~
-}
+    an array of same size holding the group indices
+  }
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~
@@ -65,5 +65,4 @@ function (data, sample)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ manip }

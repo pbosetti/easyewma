@@ -3,13 +3,13 @@
 \alias{plot.ewma}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-	PLots the ewma object.
+  plot.ewma
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+  Plots the ewma object.
 }
 \usage{
-plot.ewma(x, typ = "b", xlab = "Index", ylab = "EWMA", ...)
+\method{plot}{ewma}(x, typ = "b", xlab = "Index", ylab = "EWMA", ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -77,5 +77,4 @@ function(x, typ="b", xlab="Index", ylab="EWMA",...) {
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ hplot }

@@ -3,10 +3,10 @@
 \alias{ewma.smooth}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-	Calculates the exponentially smoothed moving average.
+  ewma.smooth
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+  Calculates the exponentially smoothed moving average.
 }
 \usage{
 ewma.smooth(x, y, lambda = 0.2, start, ...)
@@ -85,5 +85,4 @@ function (x, y, lambda = 0.2, start, ...)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ manip }
