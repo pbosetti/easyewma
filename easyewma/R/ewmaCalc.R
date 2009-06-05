@@ -25,7 +25,7 @@ function(
     range <- L*x.sd*sqrt(lambda/(group.size*(2-lambda))*(1-(1-lambda)^(2*c(1:n.groups))))
     group.df <- data.frame(
       group.df,
-      z=ewma.smooth(group.df$i, group.df$xbar,start=x.start,lambda=lambda)$y,
+      z=ewmaSmooth(group.df$i, group.df$xbar,start=x.start,lambda=lambda)$y,
       lcl=x.start-range,
       ucl=x.start+range
     )

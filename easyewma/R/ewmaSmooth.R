@@ -1,4 +1,4 @@
-ewma.smooth <-
+ewmaSmooth <-
 function (x, y, lambda = 0.2, start, ...) 
 {
     if (length(y) != length(x)) 

@@ -3,13 +3,13 @@
 \alias{ewma.formula}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+  ewma.formula
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+  Calculated the EWMA chart by formula.
 }
 \usage{
-ewma.formula(formula, data, mu0 = NA, sd = NA, lambda = 0.2, L = 3, group.size = 3, training = 5)
+\method{ewma}{formula}(formula, data, mu0 = NA, sd = NA, lambda = 0.2, L = 3, group.size = 3, training = 5)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -64,20 +64,10 @@ ewma.formula(formula, data, mu0 = NA, sd = NA, lambda = 0.2, L = 3, group.size =
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function(formula, data, mu0 = NA, sd = NA, lambda = 0.2, L = 3, group.size = 3, training = 5 )
-{
-  result <- ewmaCalc(model.frame(formula, data), mu0, sd, lambda, L, group.size, training)
-  result$call <- match.call()
-  class(result) <- "ewma"
-  result
-  }
+data(burrs)
+burrs.ewma <- ewma(burrs, lambda=0.15, training = 3)
+plot(burrs.ewma)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ hplot }

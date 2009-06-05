@@ -46,22 +46,9 @@
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function (data, sample) 
-{
-    if (length(data) != length(sample)) 
-        stop("data and sample must be vectors of equal length")
-    x <- lapply(split(data, sample), as.vector)
-    lx <- sapply(x, length)
-    for (i in which(lx != max(lx))) x[[i]] <- c(x[[i]], rep(NA, 
-        max(lx) - lx[i]))
-    x <- t(sapply(x, as.vector))
-    return(x)
-  }
+data(burrs)
+burrs.ewma <- ewma(burrs, lambda=0.15, training = 3)
+plot(burrs.ewma)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

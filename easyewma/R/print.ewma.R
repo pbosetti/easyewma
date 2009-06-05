@@ -1,5 +1,5 @@
 print.ewma <-
-function(x)
+function(x, ...)
 {
   cat("EWMA computation
 ")

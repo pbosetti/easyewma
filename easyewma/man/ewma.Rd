@@ -3,16 +3,19 @@
 \alias{ewma}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+  ewma
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+  Generic function that calculates the EWMA chart. It currently accepts either an array (or a data.frame) with indexes in the first column and values in the second column, or a formula.
 }
 \usage{
-ewma(data, mu0 = NA, sd = NA, lambda = 0.2, L = 3, group.size = 3, training = 5)
+ewma(formula, data, mu0 = NA, sd = NA, lambda = 0.2, L = 3, group.size = 3, training = 5)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
+  \item{formula}{
+%%     ~~Describe \code{data} here~~
+}
   \item{data}{
 %%     ~~Describe \code{data} here~~
 }
@@ -61,14 +64,10 @@ ewma(data, mu0 = NA, sd = NA, lambda = 0.2, L = 3, group.size = 3, training = 5)
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function(data, mu0 = NA, sd = NA, lambda = 0.2, L = 3, group.size = 3, training = 5 ) UseMethod("ewma")
+data(burrs)
+burrs.ewma <- ewma(burrs, lambda=0.15, training = 3)
+plot(burrs.ewma)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ hplot }
