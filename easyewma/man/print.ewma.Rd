@@ -1,6 +1,6 @@
-\name{ewma}
+\name{print.ewma}
 \Rdversion{1.1}
-\alias{ewma}
+\alias{print.ewma}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 %%  ~~function to do ... ~~
@@ -9,30 +9,12 @@
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-ewma(data, mu0 = NA, sd = NA, lambda = 0.2, L = 3, group.size = 3, training = 5)
+print.ewma(x)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{data}{
-%%     ~~Describe \code{data} here~~
-}
-  \item{mu0}{
-%%     ~~Describe \code{mu0} here~~
-}
-  \item{sd}{
-%%     ~~Describe \code{sd} here~~
-}
-  \item{lambda}{
-%%     ~~Describe \code{lambda} here~~
-}
-  \item{L}{
-%%     ~~Describe \code{L} here~~
-}
-  \item{group.size}{
-%%     ~~Describe \code{group.size} here~~
-}
-  \item{training}{
-%%     ~~Describe \code{training} here~~
+  \item{x}{
+%%     ~~Describe \code{x} here~~
 }
 }
 \details{
@@ -66,7 +48,14 @@ ewma(data, mu0 = NA, sd = NA, lambda = 0.2, L = 3, group.size = 3, training = 5)
 ##--	or do  help(data=index)  for the standard data sets.
 
 ## The function is currently defined as
-function(data, mu0 = NA, sd = NA, lambda = 0.2, L = 3, group.size = 3, training = 5 ) UseMethod("ewma")
+function(x)
+{
+  cat("EWMA computation
+")
+  cat(paste("Call: ", x$call, "
+"))
+  
+  }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

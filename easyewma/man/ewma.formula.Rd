@@ -1,6 +1,6 @@
-\name{ewma}
+\name{ewma.formula}
 \Rdversion{1.1}
-\alias{ewma}
+\alias{ewma.formula}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 %%  ~~function to do ... ~~
@@ -9,10 +9,13 @@
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-ewma(data, mu0 = NA, sd = NA, lambda = 0.2, L = 3, group.size = 3, training = 5)
+ewma.formula(formula, data, mu0 = NA, sd = NA, lambda = 0.2, L = 3, group.size = 3, training = 5)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
+  \item{formula}{
+%%     ~~Describe \code{formula} here~~
+}
   \item{data}{
 %%     ~~Describe \code{data} here~~
 }
@@ -66,7 +69,13 @@ ewma(data, mu0 = NA, sd = NA, lambda = 0.2, L = 3, group.size = 3, training = 5)
 ##--	or do  help(data=index)  for the standard data sets.
 
 ## The function is currently defined as
-function(data, mu0 = NA, sd = NA, lambda = 0.2, L = 3, group.size = 3, training = 5 ) UseMethod("ewma")
+function(formula, data, mu0 = NA, sd = NA, lambda = 0.2, L = 3, group.size = 3, training = 5 )
+{
+  result <- ewmaCalc(model.frame(formula, data), mu0, sd, lambda, L, group.size, training)
+  result$call <- match.call()
+  class(result) <- "ewma"
+  result
+  }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

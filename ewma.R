@@ -33,7 +33,26 @@ group.by <- function (data, sample)
     return(x)
 }
 
-ewma <- function(
+ewma <- function(data, mu0 = NA, sd = NA, lambda = 0.2, L = 3, group.size = 3, training = 5 ) UseMethod("ewma")
+
+ewma.default <- function(data, mu0 = NA, sd = NA, lambda = 0.2, L = 3, group.size = 3, training = 5 )
+{
+  result <- ewmaCalc(data, mu0, sd, lambda, L, group.size, training)
+  result$call <- match.call()
+  class(result) <- "ewma"
+  result
+}
+
+ewma.formula <- function(formula, data, mu0 = NA, sd = NA, lambda = 0.2, L = 3, group.size = 3, training = 5 )
+{
+  result <- ewmaCalc(model.frame(formula, data), mu0, sd, lambda, L, group.size, training)
+  result$call <- match.call()
+  class(result) <- "ewma"
+  result
+}
+
+
+ewmaCalc <- function(
   data,
   mu0 = NA,
   sd = NA,
@@ -73,7 +92,7 @@ ewma <- function(
       ),
       training.groups = group.df$i[training]
     )
-    attr(result, "class")<-"ewma"
+    # attr(result, "class")<-"ewma"
     return(result)
   }
 
@@ -90,6 +109,13 @@ plot.ewma <- function(x, typ="b", xlab="Index", ylab="EWMA",...) {
   abline(h=x$mu0, col="green")
   abline(v=x$fooc$ucl, lty=2, col="red")
   abline(v=x$tr, lty=2, col="darkgray")
+}
+
+print.ewma <- function(x)
+{
+  cat("EWMA computation\n")
+  cat(paste("Call: ", x$call, "\n"))
+  
 }
 
 cat("EWMA library loaded")
