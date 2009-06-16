@@ -1,8 +1,8 @@
 Package: easyewma
 Type: Package
 Title: Simple EWMA chart
-Version: 1.1
-Date: 2009-06-03
+Version: 1.2
+Date: 2009-06-16
 Author: Paolo Bosetti
 Maintainer: Paolo Bosetti <paolo.bosetti@ing.unitn.it>
 Description: Very simple and easy EWMA charting class
