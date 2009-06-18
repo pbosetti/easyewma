@@ -4,6 +4,8 @@ function(x, typ="b", xlab="Index", ylab="EWMA", ylim=c(min(x$data$lcl), max(x$da
     typ = typ, 
     xlab=xlab,
     ylab=ylab,
+    xlim=xlim,
+    ylim=ylim,
     ...)
   lines(x$data$lcl~x$data$i, col="red")
   lines(x$data$ucl~x$data$i, col="red")
@@ -11,4 +13,3 @@ function(x, typ="b", xlab="Index", ylab="EWMA", ylim=c(min(x$data$lcl), max(x$da
   abline(v=x$fooc$ucl, lty=2, col="red")
   abline(v=x$tr, lty=2, col="darkgray")
 }
-
