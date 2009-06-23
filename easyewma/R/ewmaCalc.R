@@ -20,8 +20,8 @@ function(
       xsd   = apply(group.by(full.df$x,full.df$r), c(1), sd),
       i     = apply(group.by(full.df$i,full.df$r), c(1), max)
     )
-    x.start <- ifelse(is.na(mu0), mean(data[1:training,2]), mu0) 
-    x.sd    <- ifelse(is.na(sd), sd(data[1:training,2]), sd)
+    x.start <- ifelse(is.na(mu0), mean(data[1:(training*group.size),2]), mu0) 
+    x.sd    <- ifelse(is.na(sd), sd(data[1:(training*group.size),2]), sd)
     range <- L*x.sd*sqrt(lambda/(group.size*(2-lambda))*(1-(1-lambda)^(2*c(1:n.groups))))
     group.df <- data.frame(
       group.df,
